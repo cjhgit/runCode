@@ -1,0 +1,84 @@
+[ 2016-07-08T08:50:53+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001167s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001224s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\test\Application\Home\Controller\IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001054s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001142s ]
+
+[ 2016-07-08T08:52:38+08:00 ] 127.0.0.1 /index.php/Home/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\test\Application\Home\Controller\IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000956s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001038s ]
+
+[ 2016-07-08T08:53:32+08:00 ] ::1 /test/index.php/Home/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001527s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\test\Application\Home\Controller\IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001059s ]
+
+[ 2016-07-08T08:53:54+08:00 ] ::1 /test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000926s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\test\Application\Home\Controller\IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001183s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001268s ]
+
+[ 2016-07-08T08:54:01+08:00 ] ::1 /test/index.php/Home/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\test\Application\Home\Controller\IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2016-07-08T11:07:26+08:00 ] ::1 /test/index.php/Home/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002812s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\test\Application\Home\Controller\IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001104s ]
+

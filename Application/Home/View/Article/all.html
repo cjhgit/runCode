@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章列表 - 文章网</title>
+</head>
+<body>
+<include file="Common/header" />
+
+<h1>所有文章</h1>
+<foreach name="articles" item="article">
+    <li>
+        <p><a href="/Article/detail/id/{$article['article_id']}">{$article['title']}</a></p>
+    </li>
+</foreach>
+
+</body>
+</html>

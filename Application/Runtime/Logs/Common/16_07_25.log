@@ -1,0 +1,48 @@
+[ 2016-07-25T14:16:46+08:00 ] 127.0.0.1 /tp/index.php/hello
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+ERR: 无法加载模块:Hello
+
+[ 2016-07-25T14:17:56+08:00 ] 127.0.0.1 /tp/index.php/hello/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+ERR: 无法加载模块:Hello
+
+[ 2016-07-25T14:18:02+08:00 ] 127.0.0.1 /tp/index.php/hello/Index/hello
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+ERR: 无法加载模块:Hello
+
+[ 2016-07-25T14:20:24+08:00 ] ::1 /tp/index.php/Article
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+ERR: 无法加载模块:Article
+
+[ 2016-07-25T14:20:30+08:00 ] ::1 /tp/index.php/Article/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+ERR: 无法加载模块:Article
+
+[ 2016-07-25T14:20:33+08:00 ] ::1 /tp/index.php/Article/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000461s ]
+ERR: 无法加载模块:Article
+
+[ 2016-07-25T14:20:37+08:00 ] ::1 /tp/index.php/Article/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+ERR: 无法加载模块:Article
+
+[ 2016-07-25T14:21:55+08:00 ] 127.0.0.1 /tp/index.php/hello/Index/hello
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+ERR: 无法加载模块:Hello
+
