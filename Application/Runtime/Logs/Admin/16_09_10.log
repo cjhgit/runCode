@@ -1,0 +1,21 @@
+[ 2016-09-10T11:36:34+08:00 ] 127.0.0.1 /admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+INFO: [ mark_pv ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.000582s ]
+INFO: [ mark_pv ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `code_setting` [ RunTime:0.0051s ]
+SQL: SELECT `setting_value` FROM `code_setting` WHERE ( setting_key='websiteName' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] A session had already been started - ignoring session_start() G:\install\apache2.4\htdocs\tp\Application\Home\Controller\Common\BaseController.class.php 第 19 行.
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\tp\Application\Admin\Controller\IndexController.class.php 第 25 行.
+ERR: 1146:Table 'code.eb_user' doesn't exist
+ [ SQL语句 ] : select * from eb_user where user_id = "1"
+ERR: 1146:Table 'code.eb_user' doesn't exist
+ [ SQL语句 ] : select * from eb_user where user_id = "1"
+

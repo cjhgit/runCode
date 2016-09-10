@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zhcn">
+<head>
+    <include file="Common/meta" />
+    <title>横幅信息</title>
+    <include file="Common/link" />
+    <style>
+        .banner-img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>横幅信息</h2>
+    <table class="table">
+        <tr>
+            <th>编号</th>
+            <th>排序</th>
+            <th>图片预览</th>
+            <th>图片链接</th>
+            <th>跳转链接</th>
+            <th>操作</th>
+        </tr>
+        <foreach name="banners" item="banner">
+            <tr>
+                <td>{$banner['banner_id']}</td>
+                <td>{$banner['sort_order']}</td>
+                <td><img class="banner-img" src="{$banner['resource']}"></td>
+                <td>{$banner['resource']}</td>
+                <td>{$banner['url']}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm">修改</a>
+                    <a class="btn btn-danger btn-sm">删除</a>
+                    <a class="btn btn-info btn-sm">重新上传横幅图片</a>
+                </td>
+            </tr>
+        </foreach>
+    </table>
+
+</div>
+
+
+<include file="Common/footer" />
+
+<script></script>
+</body>
+</html>
+
+

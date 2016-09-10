@@ -31,6 +31,8 @@ class ArticleController extends BaseController {
     }
 
     public function all() {
+        $this->commonInit();
+        
         $m = M('article');
         $articles = $m->select();
         //dump($articles);

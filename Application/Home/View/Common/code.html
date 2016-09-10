@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="panel panel-default" style="margin-bottom:0;">
+        <div class="panel-body">
+            <form autocomplete="off" role="form">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="html-box" class="code-box box-html">
+                            <div id="html-tag" class="code-tag">html</div>
+                            <empty name="code.html">
+                                <textarea id="html">&lt;h1&gt;这是标题&lt;/h1&gt;</textarea>
+                            <else />
+                                <textarea id="html">{$code.html}</textarea>
+                            </empty>
+
+                        </div>
+                        <div class="code-box box-javascript">
+                            <empty name="code.js">
+                                <textarea id="javascript">function() text{
+    alert(1);
+}</textarea>
+                            <else />
+                                <textarea id="javascript">{$code.js}</textarea>
+                            </empty>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="code-box box-css">
+                            <empty name="code.css">
+                                <textarea id="css">h1 {
+    color: #f00;
+}</textarea>
+                            <else />
+                                <textarea id="css">{$code.css}</textarea>
+                            </empty>
+
+                        </div>
+                        <div class="code-output" id="iframewrapper">
+                            <iframe frameborder="0" id="iframeResult"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

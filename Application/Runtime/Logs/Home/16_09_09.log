@@ -1,0 +1,43 @@
+[ 2016-09-09T22:46:28+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+INFO: [ mark_pv ] --START--
+INFO: Run Home\Behavior\TestBehavior [ RunTime:0.001954s ]
+INFO: [ mark_pv ] --END-- [ RunTime:0.002099s ]
+SQL: SHOW COLUMNS FROM `es_setting` [ RunTime:0.0043s ]
+SQL: SELECT `setting_value` FROM `es_setting` WHERE ( setting_key='websiteName' ) LIMIT 1   [ RunTime:0.0843s ]
+NOTIC: [8] A session had already been started - ignoring session_start() G:\install\apache2.4\htdocs\tp\Application\Home\Controller\Common\BaseController.class.php 第 19 行.
+SQL: SHOW COLUMNS FROM `es_menu_item` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `es_menu_item` WHERE ( menu_id = '2' and parent_id = '0' ) ORDER BY sort_order  [ RunTime:0.0726s ]
+ERR: 1146:Table 'eschool.other_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `other_user`
+NOTIC: [8] Undefined variable: hehe G:\install\apache2.4\htdocs\tp\Application\Home\Controller\IndexController.class.php 第 20 行.
+SQL: select * from eb_user where user_id = "1" [ RunTime:0.0523s ]
+SQL: SHOW COLUMNS FROM `es_banner` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `es_banner` ORDER BY sort_order  [ RunTime:0.0484s ]
+SQL: SHOW COLUMNS FROM `es_counter` [ RunTime:0.0046s ]
+SQL: SELECT `count` FROM `es_counter` WHERE ( counter_name='visit' ) LIMIT 1   [ RunTime:0.0307s ]
+NOTIC: [8] A session had already been started - ignoring session_start() G:\install\apache2.4\htdocs\tp\Application\Home\Controller\IndexController.class.php 第 37 行.
+SQL: UPDATE `es_counter` SET `count`='6' WHERE ( counter_name='visit' ) [ RunTime:0.0673s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.012388s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.012493s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029814s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000898s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2016-09-09T22:46:29+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+

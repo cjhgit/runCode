@@ -1,20 +1,27 @@
-/* 公共样式 */
-
-* {
-    padding: 0;
-    margin: 0;
+/* reset eui */
+a:hover,
+a:focus {
+    text-decoration: none;
 }
-li {
-    list-style: none;
+
+.btn {
+    border-radius: 0;
+}
+.card {
+    border-radius: 0;
+}
+/* 通用 */
+.avatar {}
+.avatar-xxs {
+    width: 20px;
+    height: 20px;
 }
 
 /* 头部 */
-.ec-header {
-     padding: 15px;
+.layout-header {
      background: #fff;
-     border-bottom: 1px solid #999;
-    overflow: hidden;
- }
+     border-bottom: 1px solid #eee;
+}
 
 .ec-header-menu {
     float: right;
@@ -24,9 +31,38 @@ li {
     margin-right: 10px;
 }
 
+
+.layout-body .container {
+    min-height: 500px;
+    padding-top: 80px;
+}
+
 /* 页脚 */
-.ec-footer {
+.layout-footer {
+    height: 200px;
     padding: 15px;
-    background: #fff;
+    background: #666;
     border-top: 1px solid #999;
+}
+.footer-nav-list {}
+.footer-nav-list li {
+    float: left;
+    margin-right: 10px;
+}
+.footer-nav-list li a {
+    color: #fff;
+}
+
+/*  */
+.index-section {
+
+}
+
+/* */
+.fun-list {
+
+}
+.fun-list .item {
+    float: left;
+    width: 33.3%;
 }
