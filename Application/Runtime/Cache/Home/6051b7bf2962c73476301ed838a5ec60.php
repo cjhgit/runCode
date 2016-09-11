@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>注册 - <?php echo ($websiteName); ?></title>
     <link rel="stylesheet" href="/public/asset/lib/eui/eui.min.css">
+<link rel="stylesheet" href="/public/asset/lib/eicon/iconfont.css">
 <link rel="stylesheet" href="/public/asset/css/common.css">
 </head>
 <body>
@@ -30,8 +31,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/code/hot">热门代码</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/editor">编辑器</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="/code/me">我的代码</a> </li>
-                <?php if($isLogin): ?><li class="nav-item"> <a class="nav-link" href="/users/${userId}/messages" target="_blank">消息</a> </li><?php endif; ?>
+                <li class="nav-item"> <a class="nav-link" href="/activity">活动 <span class="label label-danger">new</span> </a> </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if($isLogin): ?><li class="nav-item dropdown">
@@ -41,7 +41,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/users/${userId}" target="_blank">个人中心</a></li>
-                            <li><a href="/users/${userId}/friends" target="_blank">好友列表</a></li>
+                            <li><a href="/code/me">我的代码</a></li>
                             <li><a href="/settings/profile">账号设置</a></li>
                             <li class="divider"></li>
                             <li><a id="loginout" href="/login/loginout">退出登陆</a></li>
@@ -59,7 +59,7 @@
 <!-- /头部 -->
 
 <div class="layout-body">
-    <div class="container">
+    <div class="container container-main">
         <form class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-4">用户名</label>

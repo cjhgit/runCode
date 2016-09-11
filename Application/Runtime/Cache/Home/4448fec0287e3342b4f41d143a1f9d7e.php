@@ -1,10 +1,12 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit(); ?>
+<!DOCTYPE html>
 <html lang="zhcn">
 <head>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>热门代码 - <?php echo ($websiteName); ?></title>
     <link rel="stylesheet" href="/public/asset/lib/eui/eui.min.css">
+<link rel="stylesheet" href="/public/asset/lib/eicon/iconfont.css">
 <link rel="stylesheet" href="/public/asset/css/common.css">
     <style>
         .banner img {
@@ -36,8 +38,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/code/hot">热门代码</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/editor">编辑器</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="/code/me">我的代码</a> </li>
-                <?php if($isLogin): ?><li class="nav-item"> <a class="nav-link" href="/users/${userId}/messages" target="_blank">消息</a> </li><?php endif; ?>
+                <li class="nav-item"> <a class="nav-link" href="/activity">活动 <span class="label label-danger">new</span> </a> </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if($isLogin): ?><li class="nav-item dropdown">
@@ -47,7 +48,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/users/${userId}" target="_blank">个人中心</a></li>
-                            <li><a href="/users/${userId}/friends" target="_blank">好友列表</a></li>
+                            <li><a href="/code/me">我的代码</a></li>
                             <li><a href="/settings/profile">账号设置</a></li>
                             <li class="divider"></li>
                             <li><a id="loginout" href="/login/loginout">退出登陆</a></li>
@@ -66,25 +67,24 @@
 
 <div class="layout-body">
     <div class="container">
-        <section class="index-section">
-            <ul class="fun-list">
-                <li class="item">热门</li>
-                <li class="item">编辑器</li>
-                <li class="item">帮助</li>
+        <ul class="code-list">
+            <ul class="nav nav-tabs rc-tab">
+                <li class="nav-item active"><a class="nav-link" href="#tab11" data-toggle="tab">热门代码</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab12" data-toggle="tab">最新热门</a></li>
             </ul>
-        </section>
-        <section class="card">
-            <header class="card-header">
-                <h2 class="card-title">热门代码</h2>
-            </header>
-            <div class="card-body">
-                <ul>
-                <?php if(is_array($codes)): foreach($codes as $key=>$code): ?><li>
-                        <div><a href="/code/detail?id=<?php echo ($code["code_id"]); ?>"><?php echo ($code["code_name"]); ?></a></div>
-                    </li><?php endforeach; endif; ?>
-                </ul>
-            </div>
-        </section>
+            <?php if(is_array($codes)): foreach($codes as $key=>$code): ?><li class="item">
+
+                    <iframe class="code-view" src="/code/demo?id=<?php echo ($code["code_id"]); ?>"></iframe>
+                    <div class="info">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <a class="title" href="/code/detail?id=<?php echo ($code["code_id"]); ?>" target="_blank"><?php echo ($code["code_name"]); ?></a>
+                            <div class="desc"><?php echo ($code["description"]); ?></div>
+                        </div>
+
+                    </div>
+                </li><?php endforeach; endif; ?>
+        </ul>
         <!--<p>这是首页</p>
         <a href="/Home/Index/hello">hello</a>
         <p>简短信息</p>

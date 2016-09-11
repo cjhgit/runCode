@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zhcn">
+<head>
+    <include file="Common/meta" />
+    <title>代码详情 - {$websiteName}</title>
+    <include file="Common/link" />
+    <link rel="stylesheet" href="/public/asset/lib/codemirror/codemirror.min.css">
+    <link rel="stylesheet" href="/public/asset/css/index2.css">
+</head>
+<body>
+<ul class="nav nav-tabs">
+    <li class="nav-item active"><a class="nav-link" href="#tab11" data-toggle="tab">Result</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tab12" data-toggle="tab">Javascript</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tab13" data-toggle="tab">HTML</a></li>
+    <li class="nav-item"><a class="nav-link" href="#tab14" data-toggle="tab">CSS</a></li>
+</ul>
+<div class="tab-content">
+    <div id="tab11" class="tab-pane fade in active">
+        <h3>标题</h3>
+        <p>这是结果</p>
+    </div>
+    <div id="tab12" class="tab-pane fade">
+        <div>
+            {$code.js}
+        </div>
+    </div>
+    <div id="tab13" class="tab-pane fade">
+        <div>
+            {$code.html}
+        </div>
+    </div>
+    <div id="tab14" class="tab-pane fade">
+        <div>
+            {$code.css}
+        </div>
+    </div>
+</div>
+
+<include file="Common/script" />
+<script src="/public/asset/js/common.js"></script>
+<script>
+    var page = {
+        code: {
+          id: '{$code['code_id']}'
+        },
+        isSelf: {$self}
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#close-view').on('click', function (e) {
+            e.preventDefault();
+
+            $('#view-top').hide();
+            $(document.body).css('padding-top', '0')
+        }) ;
+    });
+</script>
+</body>
+</html>
+

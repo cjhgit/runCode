@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title><?php echo ($websiteName); ?> - 一段说明文本</title>
     <link rel="stylesheet" href="/public/asset/lib/eui/eui.min.css">
+<link rel="stylesheet" href="/public/asset/lib/eicon/iconfont.css">
 <link rel="stylesheet" href="/public/asset/css/common.css">
     <style>
         .banner img {
@@ -36,8 +37,7 @@
                 <li class="nav-item"> <a class="nav-link" href="/">首页</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/code/hot">热门代码</a> </li>
                 <li class="nav-item"> <a class="nav-link" href="/editor">编辑器</a> </li>
-                <li class="nav-item"> <a class="nav-link" href="/code/me">我的代码</a> </li>
-                <?php if($isLogin): ?><li class="nav-item"> <a class="nav-link" href="/users/${userId}/messages" target="_blank">消息</a> </li><?php endif; ?>
+                <li class="nav-item"> <a class="nav-link" href="/activity">活动 <span class="label label-danger">new</span> </a> </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if($isLogin): ?><li class="nav-item dropdown">
@@ -47,7 +47,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/users/${userId}" target="_blank">个人中心</a></li>
-                            <li><a href="/users/${userId}/friends" target="_blank">好友列表</a></li>
+                            <li><a href="/code/me">我的代码</a></li>
                             <li><a href="/settings/profile">账号设置</a></li>
                             <li class="divider"></li>
                             <li><a id="loginout" href="/login/loginout">退出登陆</a></li>
@@ -65,24 +65,64 @@
 <!-- /头部 -->
 
 <div class="layout-body">
+    <section class="come-on">
+        <div class="text1">每天一个Demo，你能坚持多久？</div>
+        <div class="text2">坚持了，成功也没想象那么难</div>
+        <a class="index-publish" href="">怎么玩代码</a>
+    </section>
+    <div class="">
+        <div class="container">
+            <section class="card">
+                <header class="card-header">
+                    <h2 class="card-title">热门代码</h2>
+                </header>
+                <div class="card-body">
+                    <ul>
+                        <?php if(is_array($codes)): foreach($codes as $key=>$code): ?><li>
+                                <div><a href="/code/detail?id=<?php echo ($code["code_id"]); ?>"><?php echo ($code["code_name"]); ?></a></div>
+                            </li><?php endforeach; endif; ?>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="rank-section">
+        <div class="container">
+            <section class="box box-rank box-comeon">
+                <header class="box-header">
+                    <h2 class="box-title">坚持榜</h2>
+                    <div class="box-sub-title">坚持就是胜利</div>
+                </header>
+                <div class="box-body">
+                    <ul class="comeon-user-list">
+                    <?php if(is_array($comeon_users)): foreach($comeon_users as $key=>$user): ?><li class="item">
+                            <span class="user-rank <?php if($key < 3): ?>top<?php echo ($key + 1); endif; ?>"><?php echo ($key + 1); ?></span>
+                            <a class="user-name" href="/u/detail?id=<?php echo ($user['user_id']); ?>"><?php echo ($user['username']); ?></a>
+                            <span class="user-data"><?php echo ($user['insist_day']); ?> 天</span>
+                        </li><?php endforeach; endif; ?>
+                    </ul>
+
+                </div>
+            </section>
+            <section class="box box-rank">
+                <header class="box-header">
+                    <h2 class="box-title">大神榜</h2>
+                    <div class="box-sub-title">其他人都弱爆了</div>
+                </header>
+                <div class="box-body">
+                    <ul class="comeon-user-list">
+                        <?php if(is_array($like_users)): foreach($like_users as $key=>$user): ?><li class="item">
+                                <span class="user-rank <?php if($key < 3): ?>top<?php echo ($key + 1); endif; ?>"><?php echo ($key + 1); ?></span>
+                                <a class="user-name" href="/u/detail?id=<?php echo ($user['user_id']); ?>"><?php echo ($user['username']); ?></a>
+                                <span class="user-data"><?php echo ($user['like_count']); ?> 赞</span>
+                            </li><?php endforeach; endif; ?>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
     <div class="container">
-        <section class="index-section">
-            <ul class="fun-list">
-                <li class="item">热门</li>
-                <li class="item">编辑器</li>
-                <li class="item">帮助</li>
-            </ul>
-        </section>
-        <section class="card">
-            <header class="card-header">
-                <h2 class="card-title">热门代码</h2>
-            </header>
-            <div class="card-body">
-                <a href="/code/detail?id=1">代码一</a>
-                <hr>
-                <a href="/code/detail?id=2">代码二</a>
-            </div>
-        </section>
+
         <!--<p>这是首页</p>
         <a href="/Home/Index/hello">hello</a>
         <p>简短信息</p>

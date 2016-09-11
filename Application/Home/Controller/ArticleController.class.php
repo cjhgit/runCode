@@ -12,6 +12,8 @@ use Home\Controller\Common\BaseController;
 class ArticleController extends BaseController {
 
     public function index(){
+        $this->commonInit();
+
         echo 'article';
     }
 
@@ -30,15 +32,4 @@ class ArticleController extends BaseController {
         $this->display();
     }
 
-    public function all() {
-        $this->commonInit();
-        
-        $m = M('article');
-        $articles = $m->select();
-        //dump($articles);
-        //echo $articles[0]['title'];
-        $this->assign('articles', $articles);
-
-        $this->display();
-    }
 }

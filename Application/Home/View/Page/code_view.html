@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zhcn">
+<head>
+    <include file="Common/meta" />
+    <title>代码详情 - {$websiteName}</title>
+    <include file="Common/link" />
+    <link rel="stylesheet" href="/public/asset/lib/codemirror/codemirror.min.css">
+    <link rel="stylesheet" href="/public/asset/css/index2.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+    <style>
+        {$code.css}
+    </style>
+</head>
+<body>
+<div id="view-top" class="view-top">
+    <a class="code-name" href="/code/detail?id={$code['code_id']}">{$code['code_name']}</a>
+    <a id="close-view" class="close-icon" href="#"><i class="icon icon-close"></i></a>
+</div>
+{$code.html}
+<script>
+    {$code.js}
+</script>
+<include file="Common/script" />
+<script src="/public/asset/js/common.js"></script>
+<script>
+    var page = {
+        code: {
+          id: '{$code['code_id']}'
+        },
+        isSelf: {$self}
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('#close-view').on('click', function (e) {
+            e.preventDefault();
+
+            $('#view-top').hide();
+            $(document.body).css('padding-top', '0')
+        }) ;
+    });
+</script>
+</body>
+</html>
+

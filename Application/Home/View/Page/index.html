@@ -14,24 +14,70 @@
 <body>
 <include file="Common/header" />
 <div class="layout-body">
+    <section class="come-on">
+        <div class="text1">每天一个Demo，你能坚持多久？</div>
+        <div class="text2">坚持了，成功也没想象那么难</div>
+        <a class="index-publish" href="">怎么玩代码</a>
+    </section>
+    <div class="">
+        <div class="container">
+            <section class="card">
+                <header class="card-header">
+                    <h2 class="card-title">热门代码</h2>
+                </header>
+                <div class="card-body">
+                    <ul>
+                        <foreach name="codes" item="code">
+                            <li>
+                                <div><a href="/code/detail?id={$code.code_id}">{$code.code_name}</a></div>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="rank-section">
+        <div class="container">
+            <section class="box box-rank box-comeon">
+                <header class="box-header">
+                    <h2 class="box-title">坚持榜</h2>
+                    <div class="box-sub-title">坚持就是胜利</div>
+                </header>
+                <div class="box-body">
+                    <ul class="comeon-user-list">
+                    <foreach name="comeon_users" item="user">
+                        <li class="item">
+                            <span class="user-rank <if condition="$key lt 3">top{$key + 1}</if>">{$key + 1}</span>
+                            <a class="user-name" href="/u/detail?id={$user['user_id']}">{$user['username']}</a>
+                            <span class="user-data">{$user['insist_day']} 天</span>
+                        </li>
+                    </foreach>
+                    </ul>
+
+                </div>
+            </section>
+            <section class="box box-rank">
+                <header class="box-header">
+                    <h2 class="box-title">大神榜</h2>
+                    <div class="box-sub-title">其他人都弱爆了</div>
+                </header>
+                <div class="box-body">
+                    <ul class="comeon-user-list">
+                        <foreach name="like_users" item="user">
+                            <li class="item">
+                                <span class="user-rank <if condition="$key lt 3">top{$key + 1}</if>">{$key + 1}</span>
+                                <a class="user-name" href="/u/detail?id={$user['user_id']}">{$user['username']}</a>
+                                <span class="user-data">{$user['like_count']} 赞</span>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
     <div class="container">
-        <section class="index-section">
-            <ul class="fun-list">
-                <li class="item">热门</li>
-                <li class="item">编辑器</li>
-                <li class="item">帮助</li>
-            </ul>
-        </section>
-        <section class="card">
-            <header class="card-header">
-                <h2 class="card-title">热门代码</h2>
-            </header>
-            <div class="card-body">
-                <a href="/code/detail?id=1">代码一</a>
-                <hr>
-                <a href="/code/detail?id=2">代码二</a>
-            </div>
-        </section>
+
         <!--<p>这是首页</p>
         <a href="/Home/Index/hello">hello</a>
         <p>简短信息</p>

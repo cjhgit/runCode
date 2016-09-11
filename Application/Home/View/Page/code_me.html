@@ -22,12 +22,15 @@
             </header>
             <div class="card-body">
                 <div>
-                    <a class="btn btn-primary">新建项目</a>
+                    <a class="btn btn-primary" href="/code/add">新建项目</a>
                 </div>
                 <ul>
                 <foreach name="codes" item="code">
-                    <li>
-                        <div><a href="/code/detail?id={$code.code_id}">{$code.code_name}</a></div>
+                    <li class="item" data-id="{$code.code_id}">
+                        <div>
+                            <a href="/code/detail?id={$code.code_id}">{$code.code_name}</a>
+                            <a class="delete-code" href="#">删除</a>
+                        </div>
                     </li>
                 </foreach>
                 </ul>
@@ -61,7 +64,32 @@
 <include file="Common/footer" />
 
 <script>
+    $(function () {
+       $(document).on('click', '.delete-code', function (e) {
+           e.preventDefault();
 
+           var id = $(this).closest('.item').data('id');
+
+           $.ajax({
+               url: '/code/delet',
+               data: {
+                   id: id,
+               },
+               type: 'POST',
+               dataType: 'json',
+               success: function (obj) {
+                   if (obj.code === 0) {
+                       eui.msg('删除成功');
+                   } else {
+                       eui.msg('删除失败，' + obj.msg);
+                   }
+               },
+               error: function (XMLHttpRequest, textStatus, errorThrown) {
+                   eui.msg('系统出错');
+               }
+           });
+       }) ;
+    });
 </script>
 </body>
 </html>

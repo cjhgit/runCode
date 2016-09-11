@@ -7,18 +7,27 @@
     <include file="Common/link" />
 </head>
 <body>
-<include file="Common/header" />
-<div class="layout-body">
+<div class="layout-body" style="background-color: #f00">
     <div class="container">
-        <div>测试</div>
-        <?php
-        echo time();
-        ?>
+        <div>
+            <div class="col-sm-6" style="background-color: #f90">
+                <img src="http://jsrun.net/upload/avatar/18_1472303472458.png">
+            </div>
+            <div class="col-sm-6" style="background-color: #09f">
+                <img src="http://jsrun.net/upload/avatar/18_1472303472458.png">
+            </div>
+
+        </div>
+        <div>
+            <div class="col-sm-6" style="background-color: #f90">列</div>
+            <div class="col-sm-6" style="background-color: #09f">
+                <img src="http://jsrun.net/upload/avatar/18_1472303472458.png">
+                <div>121212</div>
+            </div>
+
+        </div>
     </div>
 </div>
-
-<include file="Common/footer" />
-
 <script>
     $('#login').on('click', function(e) {
         e.preventDefault();

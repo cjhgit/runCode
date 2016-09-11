@@ -1,3 +1,6 @@
+<?php
+//dump($codes);
+?>
 <!DOCTYPE html>
 <html lang="zhcn">
 <head>
@@ -15,27 +18,26 @@
 <include file="Common/header" />
 <div class="layout-body">
     <div class="container">
-        <section class="index-section">
-            <ul class="fun-list">
-                <li class="item">热门</li>
-                <li class="item">编辑器</li>
-                <li class="item">帮助</li>
+        <ul class="code-list">
+            <ul class="nav nav-tabs rc-tab">
+                <li class="nav-item active"><a class="nav-link" href="#tab11" data-toggle="tab">热门代码</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab12" data-toggle="tab">最新热门</a></li>
             </ul>
-        </section>
-        <section class="card">
-            <header class="card-header">
-                <h2 class="card-title">热门代码</h2>
-            </header>
-            <div class="card-body">
-                <ul>
-                <foreach name="codes" item="code">
-                    <li>
-                        <div><a href="/code/detail?id={$code.code_id}">{$code.code_name}</a></div>
-                    </li>
-                </foreach>
-                </ul>
-            </div>
-        </section>
+            <foreach name="codes" item="code">
+                <li class="item">
+
+                    <iframe class="code-view" src="/code/demo?id={$code.code_id}"></iframe>
+                    <div class="info">
+                        <div class="overlay"></div>
+                        <div class="content">
+                            <a class="title" href="/code/detail?id={$code.code_id}" target="_blank">{$code.code_name}</a>
+                            <div class="desc">{$code.description}</div>
+                        </div>
+
+                    </div>
+                </li>
+            </foreach>
+        </ul>
         <!--<p>这是首页</p>
         <a href="/Home/Index/hello">hello</a>
         <p>简短信息</p>

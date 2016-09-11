@@ -48,6 +48,26 @@ class IndexController extends BaseController {
 
         $this->assign('visitCount', $visit['count']);
         */
+
+        // 热门项目
+        $m = M('code');
+        $codes = $m->select();
+        //dump($articles);
+        //echo $articles[0]['title'];
+        $this->assign('codes', $codes);
+
+        // 大神榜
+        $m = M('user');
+        $users = $m->order('like_count desc')->limit(10)->select();
+        $this->assign('comeon_users', $users);
+
+        // 菜鸟榜
+        $m2 = M('user');
+        $users2 = $m2->order('insist_day desc')->limit(10)->select();
+        //dump($articles);
+        //echo $articles[0]['title'];
+        $this->assign('like_users', $users2);
+
         $this->display('Page:index');
     }
 
